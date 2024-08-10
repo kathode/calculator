@@ -1,0 +1,29 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Calculator web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kathode/Calculator.git"
+  },
+  "author": "Qi Yan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kathode/Calculator/issues"
+  },
+  "homepage": "https://github.com/kathode/Calculator#readme",
+  "dependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "jest": "^29.7.0",
+    "jest-cli": "^29.7.0"
+  },
+  "eslintConfig": {
+    "root": true
+  }
+}
