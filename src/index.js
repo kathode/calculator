@@ -57,39 +57,45 @@ class Calculator {
     buttonContainer.className = "button-container";
     container.appendChild(buttonContainer);
 
+    const buttonColors = {
+      misc: { color: "#626261", click: "#717171" },
+      operation: { color: "#FF9F0A", click: "#c17707" },
+      number: { color: "#7C7C7B", click: "#949493" },
+    };
+
     const buttons = [
       [
-        { name: "AC", fill: 1, color: "#626261" },
-        { name: "+/-", fill: 1, color: "#626261" },
-        { name: "%", fill: 1, color: "#626261" },
-        { name: "÷", fill: 1, color: "#FF9F0A" },
+        { name: "AC", fill: 1, type: "misc", ...buttonColors.misc },
+        { name: "+/-", fill: 1, type: "misc", ...buttonColors.misc },
+        { name: "%", fill: 1, type: "misc", ...buttonColors.misc },
+        { name: "÷", fill: 1, type: "operation", ...buttonColors.operation },
       ],
 
       [
-        { name: "7", fill: 1, color: "#7C7C7B" },
-        { name: "8", fill: 1, color: "#7C7C7B" },
-        { name: "9", fill: 1, color: "#7C7C7B" },
-        { name: "×", fill: 1, color: "#FF9F0A" },
+        { name: "7", fill: 1, type: "number", ...buttonColors.number },
+        { name: "8", fill: 1, type: "number", ...buttonColors.number },
+        { name: "9", fill: 1, type: "number", ...buttonColors.number },
+        { name: "×", fill: 1, type: "operation", ...buttonColors.operation },
       ],
 
       [
-        { name: "4", fill: 1, color: "#7C7C7B" },
-        { name: "5", fill: 1, color: "#7C7C7B" },
-        { name: "6", fill: 1, color: "#7C7C7B" },
-        { name: "-", fill: 1, color: "#FF9F0A" },
+        { name: "4", fill: 1, type: "number", ...buttonColors.number },
+        { name: "5", fill: 1, type: "number", ...buttonColors.number },
+        { name: "6", fill: 1, type: "number", ...buttonColors.number },
+        { name: "-", fill: 1, type: "operation", ...buttonColors.operation },
       ],
 
       [
-        { name: "1", fill: 1, color: "#7C7C7B" },
-        { name: "2", fill: 1, color: "#7C7C7B" },
-        { name: "3", fill: 1, color: "#7C7C7B" },
-        { name: "+", fill: 1, color: "#FF9F0A" },
+        { name: "1", fill: 1, type: "number", ...buttonColors.number },
+        { name: "2", fill: 1, type: "number", ...buttonColors.number },
+        { name: "3", fill: 1, type: "number", ...buttonColors.number },
+        { name: "+", fill: 1, type: "operation", ...buttonColors.operation },
       ],
 
       [
-        { name: "0", fill: 2, color: "#7C7C7B" },
-        { name: ".", fill: 1, color: "#7C7C7B" },
-        { name: "=", fill: 1, color: "#FF9F0A" },
+        { name: "0", fill: 2, type: "number", ...buttonColors.number },
+        { name: ".", fill: 1, type: "number", ...buttonColors.number },
+        { name: "=", fill: 1, type: "operation", ...buttonColors.operation },
       ],
     ];
 
@@ -101,8 +107,13 @@ class Calculator {
         const button = document.createElement("div");
         button.textContent = config.name;
         button.className = "calculator-button";
+
         button.style.background = config.color;
         button.style.width = `${25 * config.fill}%`;
+
+        button.addEventListener("mousedown", () => (button.style.background = config.click));
+        button.addEventListener("mouseup", () => (button.style.background = config.color));
+
         row.appendChild(button);
       }
       buttonContainer.appendChild(row);

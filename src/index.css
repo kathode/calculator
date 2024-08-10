@@ -8,8 +8,8 @@ body {
   width: 100vw;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: safe center;
+  justify-content: safe center;
 }
 
 .calculator {
@@ -24,7 +24,7 @@ body {
 }
 
 .display-container {
-  background: #545353;
+  background: #515150;
   height: 20%;
 
   display: flex;
@@ -58,9 +58,12 @@ body {
 }
 
 .calculator-button {
-  outline: 1px solid #515150;
+  outline: 2px solid #515150;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  user-select: none;
+  cursor: pointer;
 }
