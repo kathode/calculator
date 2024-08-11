@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "start": "rm -rf .parcel-cache && parcel src/index.html",
-    "build": "parcel build"
+    "build": "parcel build --public-url ."
   },
   "repository": {
     "type": "git",
