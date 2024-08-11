@@ -1,3 +1,5 @@
+import { buttons, buttonType } from "./index.data";
+
 class Calculator {
   static add(firstValue, secondValue) {
     return firstValue + secondValue;
@@ -56,51 +58,6 @@ class Calculator {
     const buttonContainer = document.createElement("div");
     buttonContainer.className = "button-container";
     container.appendChild(buttonContainer);
-
-    const buttonType = {
-      clear: "clear",
-      sign: "sign",
-      percentage: "percentage",
-      operation: "operation",
-      equate: "equate",
-      number: "number",
-    };
-
-    const buttons = [
-      [
-        { name: "AC", fill: "fill-one", type: "clear" },
-        { name: "+/-", fill: "fill-one", type: "sign" },
-        { name: "%", fill: "fill-one", type: "percentage" },
-        { name: "÷", fill: "fill-one", type: "operation" },
-      ],
-
-      [
-        { name: "7", fill: "fill-one", type: "number" },
-        { name: "8", fill: "fill-one", type: "number" },
-        { name: "9", fill: "fill-one", type: "number" },
-        { name: "×", fill: "fill-one", type: "operation" },
-      ],
-
-      [
-        { name: "4", fill: "fill-one", type: "number" },
-        { name: "5", fill: "fill-one", type: "number" },
-        { name: "6", fill: "fill-one", type: "number" },
-        { name: "-", fill: "fill-one", type: "operation" },
-      ],
-
-      [
-        { name: "1", fill: "fill-one", type: "number" },
-        { name: "2", fill: "fill-one", type: "number" },
-        { name: "3", fill: "fill-one", type: "number" },
-        { name: "+", fill: "fill-one", type: "operation" },
-      ],
-
-      [
-        { name: "0", fill: "fill-two", type: "number" },
-        { name: ".", fill: "fill-one", type: "number" },
-        { name: "=", fill: "fill-one", type: "equate" },
-      ],
-    ];
 
     let firstValue = 0;
     let secondValue = 0;
@@ -188,7 +145,6 @@ class Calculator {
           }
 
           button.className = `${buttonClass} click`;
-          console.log(button.classList);
         });
 
         button.addEventListener("mouseup", () => (button.className = buttonClass));
@@ -201,5 +157,3 @@ class Calculator {
 }
 
 Calculator.generateCalculator();
-
-module.exports = Calculator;
