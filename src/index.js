@@ -114,8 +114,10 @@ class Calculator {
 
         button.addEventListener("mousedown", () => {
           if (config.type === buttonType.equate) {
-            firstValue = getCalculation(firstValue, secondValue, operation);
-            isCalculated = true;
+            if (firstValue && secondValue && operation) {
+              firstValue = getCalculation(firstValue, secondValue, operation);
+              isCalculated = true;
+            }
           }
 
           if (isCalculated && config.type === buttonType.number) {
