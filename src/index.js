@@ -127,6 +127,11 @@ class Calculator {
           }
 
           if (config.type === buttonType.operation) {
+            if (isCalculated) {
+              secondValue = 0;
+              isCalculated = false;
+            }
+
             if (operation && secondValue) {
               firstValue = getCalculation(firstValue, secondValue, operation);
               secondValue = 0;
