@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@parcel/watcher": "^2.4.1",
+    "lightningcss": "^1.26.0",
     "parcel": "^2.12.0"
   }
 }
