@@ -1,10 +1,12 @@
 {
   "name": "calculator",
   "version": "1.0.0",
+  "type": "module",
   "description": "Calculator web app",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "rm -rf .parcel-cache && parcel src/index.html"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,8 @@
   },
   "eslintConfig": {
     "root": true
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
   }
 }
