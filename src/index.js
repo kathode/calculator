@@ -62,6 +62,7 @@ class Calculator {
     let firstValue = 0;
     let secondValue = 0;
     let operation;
+    let isCalculated = false;
 
     const onNumberClick = (currentValue, targetValue) => {
       if (currentValue !== 0) {
@@ -87,14 +88,17 @@ class Calculator {
       firstValue = 0;
       secondValue = 0;
       operation = undefined;
+      isCalculated = false;
       displayValue.textContent = 0;
     };
 
     const getCalculation = (firstValue, secondValue, operation) => {
-      let results = this.operate(Number(firstValue), Number(secondValue), operation);
-      displayValue.textContent = results;
+      if (firstValue && secondValue && operation) {
+        let results = this.operate(Number(firstValue), Number(secondValue), operation);
+        displayValue.textContent = results;
 
-      return results;
+        return results;
+      }
     };
 
     for (const rows of buttons) {
@@ -111,6 +115,11 @@ class Calculator {
         button.addEventListener("mousedown", () => {
           if (config.type === buttonType.equate) {
             firstValue = getCalculation(firstValue, secondValue, operation);
+            isCalculated = true;
+          }
+
+          if (isCalculated && config.type === buttonType.number) {
+            clearCalculator();
           }
 
           if (config.type === buttonType.clear) {
@@ -122,7 +131,7 @@ class Calculator {
               firstValue = getCalculation(firstValue, secondValue, operation);
               secondValue = 0;
 
-              displayValue.textContent = results;
+              displayValue.textContent = firstValue;
             }
 
             operation = config.name;
