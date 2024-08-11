@@ -95,7 +95,7 @@ class Calculator {
     const getCalculation = (firstValue, secondValue, operation) => {
       if (firstValue && secondValue && operation) {
         let results = this.operate(Number(firstValue), Number(secondValue), operation);
-        displayValue.textContent = results;
+        displayValue.textContent = Math.round(results * 100) / 100;
 
         return results;
       }
