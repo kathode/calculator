@@ -67,3 +67,46 @@ body {
   user-select: none;
   cursor: pointer;
 }
+
+.calculator-button.misc,
+.clear,
+.sign,
+.percentage {
+  background-color: #626261;
+}
+
+.calculator-button.misc.click,
+.clear.click,
+.sign.click,
+.percentage.click {
+  background-color: #717171;
+}
+
+.calculator-button.operation,
+.equate {
+  background-color: #ff9f0a;
+
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.calculator-button.operation.click,
+.equate.click {
+  background-color: #c17707;
+}
+
+.calculator-button.number {
+  background-color: #7c7c7b;
+}
+
+.calculator-button.number.click {
+  background-color: #949493;
+}
+
+.calculator-button.fill-one {
+  width: 25%;
+}
+
+.calculator-button.fill-two {
+  width: 50%;
+}
