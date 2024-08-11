@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies and build
         run: |
           npm install
-          npm run build  # Ensure your build script moves index.html to the root of the `build` directory
+          npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
