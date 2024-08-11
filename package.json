@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "start": "rm -rf .parcel-cache && parcel src/index.html",
-    "build": "esbuild src/index.js --bundle --outfile=dist/bundle.js"
+    "build": "rm -rf .parcel-cache && parcel src/index.html"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,6 @@
     "root": true
   },
   "devDependencies": {
-    "esbuild": "^0.23.0",
     "parcel": "^2.12.0"
   }
 }
