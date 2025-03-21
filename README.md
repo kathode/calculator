@@ -1,1 +1,1 @@
-https://kathode.github.io/Calculator/
+https://kathode.github.io/calculator/
